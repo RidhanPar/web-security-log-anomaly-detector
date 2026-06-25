@@ -1,0 +1,18 @@
+# LocalStack only - for the batch / AWS workflow without Kafka.
+#
+#   docker compose -f docker-compose.localstack.yml up -d
+#
+# Provides S3, Lambda and IAM on http://localhost:4566 (test/test credentials).
+services:
+  localstack:
+    image: localstack/localstack:3.0
+    container_name: wsd-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: s3,lambda,iam
+      DEBUG: "0"
+      LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT: "90"
+    volumes:
+      - "./localstack-data:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"

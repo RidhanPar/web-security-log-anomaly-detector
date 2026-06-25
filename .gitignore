@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Large / regenerable raw data (regenerate with: python data/generate_logs.py)
+data/access_logs.csv
+
+# Intermediate Spark/pandas stages (regenerate via the pipeline)
+data/processed/
+
+# Streaming output + Spark checkpoints
+output/streaming_security_alerts/
+output/_checkpoints/
+
+# LocalStack state
+localstack-data/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
