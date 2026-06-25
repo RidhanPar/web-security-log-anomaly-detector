@@ -209,7 +209,10 @@ def tab_stream() -> None:
         stream = load_stream()
         if stream is None:
             st.warning(
-                "No streaming alerts yet. Start the producer and consumer:\n\n"
+                "No streaming alerts yet. Run the no-infrastructure demo "
+                "(no Kafka/Spark needed):\n\n"
+                "```\npython scripts/streaming_demo.py\n```\n"
+                "...or the full Kafka + Spark pipeline:\n\n"
                 "```\npython data/generate_logs.py --stream\n"
                 "python scripts/streaming_consumer.py\n```"
             )

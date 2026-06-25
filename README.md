@@ -165,6 +165,14 @@ streamlit run app.py
 The repo ships with pre-computed outputs (`data/output/`), so the dashboard
 renders immediately after cloning.
 
+To populate the **Real-Time Stream** tab without standing up Kafka/Spark, run
+the no-infrastructure demo in a second terminal (it replays detected alerts as
+live micro-batches) and tick *Auto-refresh* on that tab:
+
+```bash
+python scripts/streaming_demo.py
+```
+
 ---
 
 ## Full stack — Kafka streaming + AWS (LocalStack)
